@@ -11,9 +11,14 @@ class BooksController < ApplicationController
         render json: @books.map { |book|
         {
           Title: book.title,
-          Author: book.author
+          Author: book.author,
+          Already_read: book.already_read
           }
         }
+      end
+
+      format.csv do
+        render plain: @books.generate_csv(@books)
       end
 
     end
