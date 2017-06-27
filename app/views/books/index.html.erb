@@ -4,6 +4,7 @@
   <% @books.each do |book| %>
     <li>
       <h3><%= book.title %>, written by <%= book.author %></h3>
+          Already read this book ? : <%= book.already_read %>
     </li>
   <% end %>
 </ul>
